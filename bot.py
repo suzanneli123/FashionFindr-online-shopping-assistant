@@ -85,7 +85,7 @@ for title,description in catalog.items():
     prompt+= f"product title: {title}\n details: {description}\n\n"
 prompt += few_shot_examples2
 prompt+="DO NOT ANSWER ANYTHING BEYOND SHOPPING. DO NOT GIVE ANY INFORMATION APART FROM CATALOG THAT IS PROVIDED TO YOU"
-model="xiaomi/mimo-v2-flash:free"
+model="upstage/solar-pro-3:free"
 
 def respond(client, messages):
     messages = [{"role": "system", "content": prompt}] + messages

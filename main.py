@@ -9,8 +9,8 @@ st.title("Online Shopping Assistant")
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"),base_url="https://openrouter.ai/api/v1")
 
-if "openai_model" not in st.session_state:
-    st.session_state["openai_model"] = "xiaomi/mimo-v2-flash:free"
+#if "openai_model" not in st.session_state:
+ #   st.session_state["openai_model"] = "qwen/qwen3-coder:free"
 
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Hello! I'm FashionFindr, your online shopping assistant. How can I help you today?"}]
