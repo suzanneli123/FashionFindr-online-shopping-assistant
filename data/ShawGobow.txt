@@ -6,6 +6,7 @@ Care instructions: Hand Wash Only
 Origin: Imported
 Closure type: Zipper
 Price: $55.99
+PRODUCT_ID: B0DDT61RWC
 
 #About this item
  Size: XS=US 00, S=US 0-2, M=US 4-6, L=US 8-10, XL=US 12

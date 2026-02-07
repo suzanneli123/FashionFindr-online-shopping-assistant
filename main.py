@@ -27,20 +27,21 @@ for message in st.session_state.messages:
         avatar="personas"
     else:
         avatar="fun-emoji"
-    print_message(message["content"].replace("$", "\$"), is_user=user, key=uuid.uuid4().hex, avatar_style=avatar)
+    print_message(message["content"].replace("$", "\$"), is_user=user, key=uuid.uuid4().hex, avatar_style=avatar,allow_html=True)
 else:
     if prompt := st.chat_input("How can I help you today?"):
         st.session_state.messages.append({"role": "user", "content": prompt})
 #        with st.chat_message("user"):
 #            st.markdown(prompt)
-        print_message(prompt.replace("$", "\$"),is_user=True, key=uuid.uuid4().hex,avatar_style="personas")
+        print_message(prompt.replace("$", "\$"),is_user=True, key=uuid.uuid4().hex,avatar_style="personas",allow_html=True)
 #        with st.chat_message("assistant"):
 
         try:
             stream=respond(client,st.session_state.messages)
             #response = st.write_stream(stream)
             response=stream.choices[0].message.content
-            print_message(response.replace("$", "\$"), key=uuid.uuid4().hex, avatar_style="fun-emoji")
+            response+="<br><br>"
+            print_message(response.replace("$", "\$"), key=uuid.uuid4().hex, avatar_style="fun-emoji",allow_html=True)
             st.session_state.messages.append(
                 {"role": "assistant", "content": response}
             )
