@@ -36,13 +36,13 @@ for message in st.session_state.messages:
         avatar="personas"
     else:
         avatar="fun-emoji"
-    print_message(message["content"].replace("$", "\$"), is_user=user, key=uuid.uuid4().hex, avatar_style=avatar,allow_html=True)
+    print_message(message["content"], is_user=user, key=uuid.uuid4().hex, avatar_style=avatar,allow_html=True)
 else:
     if prompt := st.chat_input("How can I help you today?"):
         st.session_state.messages.append({"role": "user", "content": prompt})
 #        with st.chat_message("user"):
 #            st.markdown(prompt)
-        print_message(prompt.replace("$", "\$"),is_user=True, key=uuid.uuid4().hex,avatar_style="personas",allow_html=True)
+        print_message(prompt,is_user=True, key=uuid.uuid4().hex,avatar_style="personas",allow_html=True)
 #        with st.chat_message("assistant"):
 
         try:
@@ -54,7 +54,7 @@ else:
             for img in image_list:
                 img = img.strip().strip("/").strip()
                 response = response.replace(img + ".jpg", image_store[img])
-            print_message(response.replace("$", "\$"), key=uuid.uuid4().hex, avatar_style="fun-emoji",allow_html=True)
+            print_message(response, key=uuid.uuid4().hex, avatar_style="fun-emoji",allow_html=True)
             st.session_state.messages.append(
                 {"role": "assistant", "content": response}
             )
