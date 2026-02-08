@@ -52,7 +52,7 @@ else:
             response+="<br><br>"
             image_list = re.findall(r'/([\w-]+)\.jpg', response, re.IGNORECASE)
             for img in image_list:
-                img = img.strip().strip("/").strip()
+                img = img.strip()
                 response = response.replace(img + ".jpg", image_store[img])
             print_message(response, key=uuid.uuid4().hex, avatar_style="fun-emoji",allow_html=True)
             st.session_state.messages.append(
