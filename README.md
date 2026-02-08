@@ -12,11 +12,11 @@ Features:
  - Prompt-engineered system role for controlled responses 
  - Streamlit-based chat UI 
  - Uses OpenRouter-compatible OpenAI client
- - Powered by Xiaomi: MiMo-V2-Flash (free) model via OpenRouter
+ - Powered by Solar Pro 3 model via OpenRouter
 
 Model Details
 - Provider: OpenRouter
-- Model: xiaomi/mimo-v2-flash:free
+- Model: Solar Pro 3
 - Usage: LLM response generation for catalog-based conversational shopping
 - Reason for Selection: Fast, cost-free inference suitable for lightweight conversational applications
 

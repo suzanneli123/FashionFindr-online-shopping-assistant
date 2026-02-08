@@ -4,6 +4,15 @@ from bot import respond
 from streamlit_chat import message as print_message
 import uuid
 import os
+import re
+image_store={"B0D77LQR7P":"https://i.ibb.co/Y7Wfr1f1/image.jpg",
+"B0DDT61RWC":"https://i.ibb.co/Z6M7sYQP/image.jpg",
+"B0F7XNC9J9":"https://i.ibb.co/bgj3wBzP/image.jpg",
+"B0FKN789V3":"https://i.ibb.co/5h5qWqQ0/image.jpg",
+"B07WDHZ9M8":"https://i.ibb.co/Dg5Fjs32/image.jpg",
+"B09M3QMV8P":"https://i.ibb.co/35hLB54Q/image.jpg",
+"B079RPTVZT":"https://i.ibb.co/bjxHBvX1/image.jpg"}
+
 
 st.title("Online Shopping Assistant")
 
@@ -41,6 +50,10 @@ else:
             #response = st.write_stream(stream)
             response=stream.choices[0].message.content
             response+="<br><br>"
+            image_list = re.findall(r'\b([\w-]+)\.jpg\b', response, re.IGNORECASE)
+            for img in image_list:
+                img = img.strip().strip("/").strip()
+                response = response.replace(img + ".jpg", image_store[img])
             print_message(response.replace("$", "\$"), key=uuid.uuid4().hex, avatar_style="fun-emoji",allow_html=True)
             st.session_state.messages.append(
                 {"role": "assistant", "content": response}
