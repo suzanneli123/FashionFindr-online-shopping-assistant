@@ -9,49 +9,8 @@ for file in files:
     description="\n".join(d for d in data[1:])
     catalog[title]=description
 
-few_shot_examples2 = """
-
-Here are a few examples.
-Example 1:
-User: I am looking for a sparkly dress
-Assistant: Do you have any color or fit preference?
-User: Show me all the sparkly dresses you have.
-Assistant: I found three sparkly dresses for you. 
-- Jessica women dress
-- Berry long sweater dress
-- Boho maxi dress
-Let me know which dress you want more details about. I can get it for you.
-User: I have a budget of $20.
-Assistant: You can buy the Boho maxi dress since it is $16 which meets your budget. Would you like to view more details about this dress?
-User: No. Thank you so much for helping. That's all I needed.
-Assistant: No problem! Feel free to come back if you need any help.
-
-Example 2:
-User: I am looking for a dress
-Assistant: Do you prefer a particular style or is it for any occassion?
-User: Cocktail party
-Assistant: What's your budget?
-User: Below $40
-Assistant: Got it. Here are my top picks.
-- Hollypick lace dress 
-- Pretty Garden shoulder bodycon dress
-User: Thank you. You have been a great help
-Assistant: No problem! Feel free to come back if you need any help.
-
-Example 3:
-User: I am looking for a sweater
-Assistant: Do you have a budget in mind?
-User: Below $10
-Assistant: Sorry, there are no sweaters within the $10 budget. Would you increase it?
-User: What is the cheapest one you have?
-Assistant: We have trendy queen oversized crewneck sweater that is $40. Are you interested in that one?
-User: No
-Assistant: Alright. Let me know if there is anything I can help you with. 
-User: No, I'm good. Thanks
-Assistant: No problem! Feel free to come back if you need any help.
-"""
-few_shot_examples3 = """
-Here are a few examples. The <PRODUCT_ID> mentioned is just for reference and is not a real product id, replace it with actual product_id found in the catalog. 
+few_shot_examples = """
+Here are a few examples. The <PRODUCT_ID> mentioned is just for reference and is not a real product id, replace it with actual product_id found in the catalog. Make sure all the images start with "/" and DO NOT forget "/" at beginning. 
 Example 1:
 User: I am looking for a sparkly dress
 Assistant: <p>Do you have any color or fit preference?</p>
@@ -91,7 +50,7 @@ prompt="You are a online shopping assistant FashionFindr. You want to help custo
 prompt+="Here is a catalog: "
 for title,description in catalog.items():
     prompt+= f"product title: {title}\n details: {description}\n\n"
-prompt += few_shot_examples3
+prompt += few_shot_examples
 prompt+="DO NOT ANSWER ANYTHING BEYOND SHOPPING. DO NOT GIVE ANY INFORMATION APART FROM CATALOG THAT IS PROVIDED TO YOU"
 model="upstage/solar-pro-3:free"
 

@@ -50,7 +50,7 @@ else:
             #response = st.write_stream(stream)
             response=stream.choices[0].message.content
             response+="<br><br>"
-            image_list = re.findall(r'\b([\w-]+)\.jpg\b', response, re.IGNORECASE)
+            image_list = re.findall(r'/([\w-]+)\.jpg', response, re.IGNORECASE)
             for img in image_list:
                 img = img.strip().strip("/").strip()
                 response = response.replace(img + ".jpg", image_store[img])
