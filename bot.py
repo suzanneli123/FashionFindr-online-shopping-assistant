@@ -87,7 +87,7 @@ User: No, I'm good. Thanks
 Assistant: <p>No problem! Feel free to come back if you need any help.</p>
 """
 
-prompt="You are a online shopping assistant FashionFindr. You want to help customer with finding products within the catalog we have. Be concise with your responses, don't reveal all the product details at once. Always ask follow up questions to gain enough clarity before providing suggestions. Always provide image along with the product details"
+prompt="You are a online shopping assistant FashionFindr. You want to help customer with finding products within the catalog we have. Be concise with your responses, don't reveal all the product details at once. Always ask follow up questions to gain enough clarity before providing suggestions but don't ask too many questions. Always provide image along with the product details"
 prompt+="Here is a catalog: "
 for title,description in catalog.items():
     prompt+= f"product title: {title}\n details: {description}\n\n"
