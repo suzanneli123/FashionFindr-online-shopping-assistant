@@ -5,12 +5,12 @@ from streamlit_chat import message as print_message
 import uuid
 import os
 import re
-image_store={"B0D77LQR7P":"https://i.ibb.co/Y7Wfr1f1/image.jpg",
-"B0DDT61RWC":"https://i.ibb.co/Z6M7sYQP/image.jpg",
-"B0F7XNC9J9":"https://i.ibb.co/bgj3wBzP/image.jpg",
-"B0FKN789V3":"https://i.ibb.co/5h5qWqQ0/image.jpg",
-"B07WDHZ9M8":"https://i.ibb.co/Dg5Fjs32/image.jpg",
-"B09M3QMV8P":"https://i.ibb.co/35hLB54Q/image.jpg",
+image_store={"B0D77LQR7P":"https://m.media-amazon.com/images/I/71q7er5XI-L._AC_SY741_.jpg",
+"B0DDT61RWC":"https://m.media-amazon.com/images/I/614gNsWeueL._AC_SY879_.jpg",
+"B0F7XNC9J9":"https://m.media-amazon.com/images/I/817Ygaz9iqL._AC_SY741_.jpg",
+"B0FKN789V3":"https://m.media-amazon.com/images/I/81EXZr+TdoL._AC_SX679_.jpg",
+"B07WDHZ9M8":"https://m.media-amazon.com/images/I/7177msEBorL._AC_SY741_.jpg",
+"B09M3QMV8P":"https://m.media-amazon.com/images/I/41JKyPogyTL._AC_SY879_.jpg",
 "B079RPTVZT":"https://i.ibb.co/bjxHBvX1/image.jpg"}
 
 
